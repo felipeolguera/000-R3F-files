@@ -12,8 +12,7 @@ function Overlay() {
         <br />
         olguera jr  
       </a>
-      <div style={{ position: 'absolute', top: 40, right: 40, fontSize: '13px' }}>Get my CV</div>
-    </div>
+     </div>
   )
 }
 
