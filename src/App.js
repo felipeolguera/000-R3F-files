@@ -312,7 +312,7 @@ export const App = () => {
     }}
   >
     <a
-      href="/felipe-cv.pdf"
+      href="/Felipe_Olguera_Resume_2025_FULL.pdf"
       download
       className="cv-button"
     >
