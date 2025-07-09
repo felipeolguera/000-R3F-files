@@ -35,6 +35,23 @@ h1 {
   padding: 0;
 }
 
+h2{
+  font-size: 5vw;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.7em;
+  margin: 0;
+  padding: 0;
+}
+
+h3{
+  font-size: 2vw;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.7em;
+  margin: 0;
+  padding: 0;
+}
 a {
   pointer-events: all;
   color: black;

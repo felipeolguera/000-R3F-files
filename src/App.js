@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useIntersect, Image, ScrollControls, Scroll, Html, OrbitControls } from '@react-three/drei'
 import { ModelItem } from './ModelItem' // Import it
-
+import GoawkCaseStudy from './GoawkCaseStudy';
  import { Suspense } from 'react'
 
 import {   useProgress } from '@react-three/drei'
@@ -121,6 +121,7 @@ function Items({ openModal }) {
 
   return (
     <Scroll>
+     
       <Item url="/1.jpg" scale={[w / 2.5, w / 4.4, 1]} position={[-w / 5, 0, 0]} onClick={openModal} title="Sustainability Dashboard
 "
   description="This project focuses on designing and developing a futuristic-style sustainability dashboard that visualizes key environmental KPIs. I handled the entire UX/UI process from scratch, creating an immersive and visually engaging experience using WebGL and React. The interface is crafted to present complex data in an intuitive, interactive format that aligns with modern design and performance standards.
@@ -151,8 +152,19 @@ function Items({ openModal }) {
   description="Showcasing sustainability and other environmental KPI for a building."/>
       <Item url="/8.jpg" scale={[w / 2.09, w / 3.85, 1]} position={[w / 4, -h * 3.1, 0]} onClick={openModal} title="Smart City for Abu Dhabi Clientel"
   description="Smart city project monitoring the city's sustainability progress."/>
-      <Item url="/12.jpg" scale={[w / 2.5, w / 2, 1]} position={[-w / 6, -h * 4.1, 0]} onClick={openModal} title="Felipe Olguera Jr."
-  description="UX UI 3D Designer Extra Ordinaire - 23 years of expertise"/>
+  
+  
+      <Html position={[-w / 2.5, -h * 3.5, 0]} style={{width: '74vw'}} >
+        <GoawkCaseStudy/>
+      </Html>
+
+{/* position={[-w / 6, -h * 4.1, 0]}
+position={[-w / 2.5, -h * 5, 0]} */}
+
+      <Item url="/12.jpg" scale={[w / 2.5, w / 2, 1]} position={[-w / 3, -h * 5.8, 0]} onClick={openModal} title="Felipe Olguera Jr." description="UX UI 3D Designer Extra Ordinaire - 23 years of expertise"/>
+      
+    
+
     </Scroll>
   )
 }
@@ -260,36 +272,43 @@ export const App = () => {
   return (
     <>
       <Canvas
-  shadows
-  orthographic
-  camera={{ zoom: 80 }}
-  gl={{ alpha: false, antialias: true }}
-  dpr={[1, 1.5]}
->
+        shadows
+        orthographic
+        camera={{ zoom: 80 }}
+        gl={{ alpha: false, antialias: true }}
+        dpr={[1, 1.5]}
+      >
 
-          <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader />}>
 
-  <ambientLight intensity={0.5} />
-<directionalLight
-  castShadow
-  position={[5, 5, 5]}
-  intensity={1}
-  shadow-mapSize-width={1024}
-  shadow-mapSize-height={1024}
-/>
+        <ambientLight intensity={0.5} />
+        <directionalLight
+          castShadow
+          position={[5, 5, 5]}
+          intensity={1}
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}/>
          <color attach="background" args={['#f0f0f0']} />
-        <ScrollControls damping={6} pages={5}>
+        <ScrollControls damping={6} pages={6.9}>
           <Items openModal={openModal} />
           <Scroll html style={{ width: '100%' }}>
+ 
             <h1 style={{ position: 'absolute', top: `75vh`, right: '20vw'}}>ux ui</h1>
             <h1 style={{ position: 'absolute', top: '180vh', left: '10vw' }}>3d</h1>
             <h1 style={{ position: 'absolute', top: '260vh', right: '10vw' }}>frontend</h1>
             <h1 style={{ position: 'absolute', top: '350vh', left: '10vw' }}>design</h1>
-            <h1 style={{ position: 'absolute', top: '450vh', right: '2vw' }}>
+            <h1 style={{ position: 'absolute', top: '590vh', right: '12vw' }}>
               felipe
               <br />
               olguera
+              <br />
+              jr
             </h1>
+            <h3 style={{ position: 'absolute', top: '630vh', right: '22vw' }}>
+              +971 525329744
+            </h3>
+
+ 
           </Scroll>
         </ScrollControls>
         </Suspense>
@@ -297,7 +316,25 @@ export const App = () => {
 
       <Modal activeUrl={activeUrl} onClose={() => setActiveUrl(null)} />
 
-
+ {/* CV Button with animation on load and hover
+  <div
+    style={{
+      position: 'fixed',
+      top: '2rem',
+      right: '13rem',
+      zIndex: 1001,
+      animation: 'slideUpFade 1.2s ease-out forwards',
+      opacity: 0,
+    }}
+  >
+    <a
+      href="/product-design"
+      download
+      className="cv-button"
+    >
+      Product Design
+    </a>
+  </div> */}
 
 
   {/* CV Button with animation on load and hover */}
